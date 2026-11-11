@@ -1,0 +1,1314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A...j DRIPS - Premium luxury fashion, streetwear and designer clothing.">
+<title>A...j DRIPS | Fashion Without Limits</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#101010;
+  --white:#fff;
+  --grey:#777;
+  --light:#f5f5f2;
+  --border:#e8e8e8;
+  --gold:#c5a46d;
+  --font:'DM Sans',sans-serif;
+  --serif:'Playfair Display',serif;
+}
+
+* {margin:0;padding:0;box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {font-family:var(--font);color:var(--black);background:white}
+button,input,select {font:inherit}
+button {cursor:pointer}
+a {color:inherit;text-decoration:none}
+img {display:block;width:100%;object-fit:cover}
+.container {width:92%;max-width:1450px;margin:auto}
+.section {padding:90px 0}
+.section-heading {text-align:center;margin-bottom:40px}
+.section-heading p {color:var(--grey);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.section-heading h2 {font:600 42px var(--serif)}
+.section-heading span {color:var(--grey);font-size:14px;display:block;margin-top:10px}
+
+.announcement {
+ background:#111;color:white;text-align:center;padding:11px;
+ font-size:11px;letter-spacing:2px;
+}
+.topbar {
+ height:83px;display:flex;align-items:center;justify-content:space-between;
+ padding:0 4%;border-bottom:1px solid var(--border);position:relative;z-index:20;background:white;
+}
+.logo {font-size:29px;font-weight:800;letter-spacing:-2px}
+.logo span {color:var(--gold)}
+.desktop-nav {display:flex;gap:30px;align-items:center}
+.desktop-nav a {font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.desktop-nav a:hover {color:var(--gold)}
+.header-actions {display:flex;align-items:center;gap:19px}
+.icon-btn {border:0;background:none;font-size:19px;position:relative}
+.count {
+ position:absolute;top:-9px;right:-10px;background:black;color:white;
+ width:17px;height:17px;border-radius:50%;font-size:10px;
+ display:grid;place-items:center;
+}
+.menu-toggle {display:none;font-size:25px;border:0;background:none}
+
+.hero {
+ min-height:650px;background:#191919;
+ position:relative;display:flex;align-items:center;overflow:hidden;color:white;
+}
+.hero-bg {
+ position:absolute;inset:0;
+ background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.1)),
+ url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2000&q=90') center 35%/cover;
+ transform:scale(1.02);
+ animation:heroZoom 12s infinite alternate;
+}
+@keyframes heroZoom {to{transform:scale(1.09)}}
+.hero-content {position:relative;z-index:2;padding:80px 8%;max-width:750px}
+.hero-label {letter-spacing:5px;font-size:11px;margin-bottom:22px}
+.hero h1 {font:600 clamp(55px,8vw,105px)/1.02 var(--serif);margin-bottom:25px}
+.hero h1 span {font-style:italic;color:#ddd}
+.hero-content p {font-size:15px;line-height:1.9;max-width:430px;color:#ddd;margin-bottom:35px}
+.btn {
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:16px 29px;background:black;color:white;border:1px solid black;
+ font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+ transition:.3s;
+}
+.btn:hover {background:white;color:black}
+.btn-light {background:white;color:black;border-color:white}
+.btn-light:hover {background:transparent;color:white}
+.btn-outline {background:transparent;color:black}
+.btn-outline:hover {background:black;color:white}
+.hero-buttons {display:flex;gap:13px;flex-wrap:wrap}
+
+.benefits {
+ display:grid;grid-template-columns:repeat(4,1fr);padding:28px 4%;
+ border-bottom:1px solid var(--border);gap:20px;
+}
+.benefit {text-align:center}
+.benefit strong {font-size:12px;display:block;margin-bottom:6px}
+.benefit small {font-size:11px;color:var(--grey)}
+
+.categories {display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.category-card {height:430px;position:relative;overflow:hidden;background:#eee}
+.category-card img {height:100%;transition:.7s}
+.category-card:hover img {transform:scale(1.07)}
+.category-info {
+ position:absolute;bottom:0;left:0;width:100%;padding:35px 25px;
+ color:white;background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+.category-info h3 {font:30px var(--serif);margin-bottom:12px}
+.category-info a {font-size:11px;letter-spacing:2px;border-bottom:1px solid white;padding-bottom:5px}
+
+.filter-bar {
+ display:flex;justify-content:space-between;align-items:center;
+ gap:15px;flex-wrap:wrap;margin-bottom:30px;
+}
+.filter-buttons {display:flex;gap:9px;flex-wrap:wrap}
+.filter-buttons button {
+ background:white;border:1px solid var(--border);padding:10px 17px;
+ font-size:11px;text-transform:uppercase;letter-spacing:1px;
+}
+.filter-buttons button.active,.filter-buttons button:hover {background:black;color:white}
+.filter-bar select,.search-input {
+ padding:11px;border:1px solid var(--border);background:white;font-size:12px;
+}
+.product-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:30px 18px}
+.product-card {min-width:0;position:relative}
+.product-image {height:340px;position:relative;background:#f1f1f1;overflow:hidden}
+.product-image img {height:100%;transition:.5s}
+.product-card:hover .product-image img {transform:scale(1.045)}
+.product-tag {
+ position:absolute;top:13px;left:13px;background:white;padding:7px 10px;
+ font-size:9px;letter-spacing:1px;font-weight:700;
+}
+.wishlist-btn {
+ position:absolute;top:12px;right:12px;border:0;background:white;
+ width:35px;height:35px;border-radius:50%;font-size:18px;
+}
+.wishlist-btn.selected {color:#c22}
+.quick-add {
+ position:absolute;bottom:0;left:0;width:100%;padding:14px;
+ background:black;color:white;border:0;font-size:11px;letter-spacing:2px;
+ transform:translateY(100%);transition:.3s;
+}
+.product-card:hover .quick-add {transform:translateY(0)}
+.product-details {padding:15px 2px}
+.product-category {font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px}
+.product-name {font-size:13px;font-weight:600;margin:7px 0}
+.product-price {font-size:13px;font-weight:700}
+.old-price {text-decoration:line-through;color:#999;margin-left:8px;font-weight:400}
+.rating {font-size:11px;color:#ad8747;margin-top:7px}
+.product-colors {display:flex;gap:6px;margin-top:9px}
+.color-dot {height:12px;width:12px;border-radius:50%;border:1px solid #ccc}
+
+.promo {
+ min-height:380px;display:flex;align-items:center;justify-content:center;
+ text-align:center;color:white;position:relative;
+ background:linear-gradient(#0008,#0008),url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+.promo h2 {font:50px var(--serif);margin:15px 0}
+.promo p {letter-spacing:3px;font-size:11px}
+.promo .btn {margin-top:25px}
+
+.editorial {display:grid;grid-template-columns:1fr 1fr;min-height:570px}
+.editorial-image img {height:100%;min-height:450px}
+.editorial-content {background:#f4f3ef;padding:70px;display:flex;flex-direction:column;justify-content:center}
+.editorial-content small {letter-spacing:3px;font-size:11px}
+.editorial-content h2 {font:48px var(--serif);margin:20px 0}
+.editorial-content p {font-size:14px;line-height:2;color:#666;margin-bottom:28px}
+
+.newsletter {background:#f5f5f2;text-align:center;padding:75px 20px}
+.newsletter h2 {font:38px var(--serif);margin-bottom:12px}
+.newsletter p {font-size:13px;color:#777;margin-bottom:24px}
+.newsletter-form {display:flex;max-width:450px;margin:auto}
+.newsletter-form input {flex:1;min-width:0;padding:16px;border:1px solid #ddd}
+.newsletter-form button {padding:0 20px;background:black;color:white;border:0;font-size:11px}
+
+footer {background:#101010;color:white;padding:65px 5% 25px}
+.footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:40px}
+.footer-brand h2 {font-size:28px;margin-bottom:17px}
+.footer-brand p {font-size:12px;line-height:2;color:#aaa;max-width:300px}
+.footer-column h4 {font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.footer-column a {display:block;font-size:12px;color:#aaa;margin-bottom:13px}
+.footer-column a:hover {color:white}
+.footer-bottom {border-top:1px solid #333;margin-top:45px;padding-top:23px;display:flex;justify-content:space-between;gap:15px;color:#999;font-size:11px;flex-wrap:wrap}
+
+.overlay {
+ position:fixed;inset:0;background:#0008;z-index:100;opacity:0;
+ visibility:hidden;transition:.3s;
+}
+.overlay.show {opacity:1;visibility:visible}
+.drawer {
+ position:fixed;right:0;top:0;height:100%;width:min(440px,100%);
+ background:white;z-index:101;padding:25px;transform:translateX(100%);
+ transition:.35s;overflow-y:auto;
+}
+.drawer.show {transform:translateX(0)}
+.drawer-head {display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:20px}
+.close-btn {border:0;background:none;font-size:27px}
+.cart-item {display:flex;gap:15px;padding:18px 0;border-bottom:1px solid #eee}
+.cart-item img {width:80px;height:95px}
+.cart-item h4 {font-size:13px;margin-bottom:8px}
+.cart-item p {font-size:12px;color:#666}
+.cart-item button {background:none;border:0;text-decoration:underline;font-size:11px;margin-top:8px}
+.cart-total {padding:25px 0;display:flex;justify-content:space-between;font-weight:700}
+.full-btn {width:100%;border:0;padding:17px;background:black;color:white;letter-spacing:2px;font-size:11px}
+
+.modal {
+ position:fixed;inset:0;z-index:120;background:#0009;
+ display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal.show {display:flex}
+.modal-box {
+ background:white;padding:35px;width:min(480px,100%);max-height:90vh;
+ overflow:auto;position:relative;
+}
+.modal-box h2 {font:30px var(--serif);margin-bottom:12px}
+.modal-box p {font-size:12px;color:#777;margin-bottom:20px}
+.modal-box input,.modal-box select,.modal-box textarea {
+ width:100%;padding:14px;margin-bottom:13px;border:1px solid #ddd;
+}
+.modal-box label {font-size:11px;display:block;margin-bottom:6px}
+.modal-close {position:absolute;right:20px;top:15px;background:none;border:0;font-size:23px}
+.modal-switch {font-size:12px;margin-top:17px;text-align:center}
+.modal-switch button {background:none;border:0;text-decoration:underline}
+.message {font-size:12px;padding:10px;margin-bottom:12px;background:#eee;display:none}
+.size-options {display:flex;gap:8px;margin:10px 0 20px}
+.size-options button {padding:9px 14px;background:white;border:1px solid #ddd}
+.size-options button.active {background:black;color:white}
+.detail-image {height:250px;margin-bottom:15px}
+.empty-state {text-align:center;padding:60px 15px;color:#777;font-size:13px}
+.admin-table {width:100%;border-collapse:collapse;font-size:11px}
+.admin-table td,.admin-table th {padding:12px 6px;border-bottom:1px solid #eee;text-align:left}
+.admin-panel {background:#f7f7f7;padding:15px;margin:15px 0}
+.mobile-menu {
+ position:fixed;top:0;left:0;height:100%;width:280px;background:white;
+ z-index:105;transform:translateX(-100%);transition:.3s;padding:30px;
+}
+.mobile-menu.show {transform:translateX(0)}
+.mobile-menu a {display:block;padding:18px 0;border-bottom:1px solid #eee;font-size:13px}
+.toast {
+ position:fixed;bottom:25px;left:50%;transform:translate(-50%,100px);
+ background:black;color:white;padding:14px 25px;font-size:12px;
+ z-index:200;transition:.3s;
+}
+.toast.show {transform:translate(-50%,0)}
+
+@media(max-width:1000px) {
+ .desktop-nav {gap:15px}
+ .product-grid {grid-template-columns:repeat(3,1fr)}
+ .product-image {height:300px}
+ .editorial-content {padding:40px}
+}
+@media(max-width:750px) {
+ .desktop-nav {display:none}
+ .menu-toggle {display:block}
+ .topbar {height:70px}
+ .logo {font-size:24px}
+ .header-actions {gap:15px}
+ .hero {min-height:580px}
+ .hero-content {padding:60px 6%}
+ .hero h1 {font-size:65px}
+ .benefits {grid-template-columns:repeat(2,1fr);gap:25px 10px}
+ .section {padding:65px 0}
+ .section-heading h2 {font-size:34px}
+ .categories {grid-template-columns:1fr 1fr}
+ .category-card {height:320px}
+ .category-card:last-child {grid-column:span 2;height:350px}
+ .product-grid {grid-template-columns:repeat(2,1fr);gap:25px 12px}
+ .product-image {height:260px}
+ .quick-add {transform:none}
+ .editorial {grid-template-columns:1fr}
+ .editorial-content {padding:45px 7%}
+ .editorial-image img {height:400px}
+ .footer-grid {grid-template-columns:1fr 1fr}
+}
+@media(max-width:420px) {
+ .product-image {height:215px}
+ .product-name {font-size:12px}
+ .hero h1 {font-size:53px}
+ .hero-buttons .btn {padding:14px 16px}
+ .categories {gap:10px}
+ .category-card {height:270px}
+ .category-info {padding:20px 12px}
+ .category-info h3 {font-size:23px}
+ .filter-buttons button {padding:8px 11px}
+ .newsletter-form button {padding:0 12px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+ FREE SHIPPING ON SELECT ORDERS | DISCOVER YOUR STYLE
+</div>
+
+<header class="topbar">
+ <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+ <a href="#home" class="logo">A...j<span> DRIPS</span></a>
+
+ <nav class="desktop-nav">
+  <a href="#home">Home</a>
+  <a href="#collections">Collections</a>
+  <a href="#shop">Shop</a>
+  <a href="#new">New Arrivals</a>
+  <a href="#about">Our Story</a>
+ </nav>
+
+ <div class="header-actions">
+  <button class="icon-btn" onclick="openSearch()" title="Search">⌕</button>
+  <button class="icon-btn" onclick="openWishlist()" title="Wishlist">♡</button>
+  <button class="icon-btn" onclick="openAccount()" title="Account">♙</button>
+  <button class="icon-btn" onclick="openCart()" title="Cart">
+   🛍 <span class="count" id="cartCount">0</span>
+  </button>
+ </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+ <button class="close-btn" onclick="toggleMenu()" style="float:right">×</button>
+ <h2 style="font-family:var(--serif);margin:30px 0">A...j DRIPS</h2>
+ <a href="#home" onclick="toggleMenu()">Home</a>
+ <a href="#collections" onclick="toggleMenu()">Collections</a>
+ <a href="#shop" onclick="toggleMenu()">Shop</a>
+ <a href="#new" onclick="toggleMenu()">New Arrivals</a>
+ <a href="#about" onclick="toggleMenu()">Our Story</a>
+ <a href="#contact" onclick="toggleMenu()">Contact</a>
+ <a href="#" onclick="openAccount();toggleMenu()">My Account</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-bg"></div>
+ <div class="hero-content">
+  <p class="hero-label">THE NEW FASHION GENERATION</p>
+  <h1>Fashion<br><span>Without</span><br>Limits.</h1>
+  <p>
+   Discover a new expression of style. Premium clothing,
+   contemporary streetwear and timeless fashion designed
+   for people who stand out.
+  </p>
+  <div class="hero-buttons">
+   <a href="#shop" class="btn btn-light">SHOP COLLECTION</a>
+   <a href="#about" class="btn btn-outline btn-light">DISCOVER US</a>
+  </div>
+ </div>
+</section>
+
+<div class="benefits">
+ <div class="benefit"><strong>✦ PREMIUM QUALITY</strong><small>Carefully selected designs</small></div>
+ <div class="benefit"><strong>✈ INTERNATIONAL SHIPPING</strong><small>Fashion delivered to you</small></div>
+ <div class="benefit"><strong>↻ EASY SHOPPING</strong><small>Simple ordering experience</small></div>
+ <div class="benefit"><strong>♡ CUSTOMER CARE</strong><small>Here to assist you</small></div>
+</div>
+
+<section class="section" id="collections">
+ <div class="container">
+  <div class="section-heading">
+   <p>EXPLORE YOUR STYLE</p>
+   <h2>Our Collections</h2>
+   <span>Designed to make a statement.</span>
+  </div>
+
+  <div class="categories">
+   <div class="category-card">
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=850&q=85" alt="Women's fashion">
+    <div class="category-info">
+     <h3>Women's Collection</h3>
+     <a href="#shop" onclick="setFilter('Women')">EXPLORE COLLECTION →</a>
+    </div>
+   </div>
+   <div class="category-card">
+    <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=850&q=85" alt="Men's fashion">
+    <div class="category-info">
+     <h3>Men's Collection</h3>
+     <a href="#shop" onclick="setFilter('Men')">EXPLORE COLLECTION →</a>
+    </div>
+   </div>
+   <div class="category-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=850&q=85" alt="Sneakers">
+    <div class="category-info">
+     <h3>Shoes & Sneakers</h3>
+     <a href="#shop" onclick="setFilter('Shoes')">EXPLORE COLLECTION →</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="shop">
+ <div class="container">
+  <div class="section-heading">
+   <p>THE A...J DRIPS EDIT</p>
+   <h2>Shop Our Collection</h2>
+   <span>Find the pieces that define your style.</span>
+  </div>
+
+  <div class="filter-bar">
+   <div class="filter-buttons">
+    <button class="active" onclick="setFilter('All',this)">All</button>
+    <button onclick="setFilter('Men',this)">Men</button>
+    <button onclick="setFilter('Women',this)">Women</button>
+    <button onclick="setFilter('Shoes',this)">Shoes</button>
+    <button onclick="setFilter('Streetwear',this)">Streetwear</button>
+   </div>
+   <select id="sortSelect" onchange="renderProducts()">
+    <option value="default">Sort: Featured</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+   </select>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+ </div>
+</section>
+
+<section class="promo" id="new">
+ <div>
+  <p>THE LATEST DROP</p>
+  <h2>New Season. New Energy.</h2>
+  <p>YOUR STYLE. YOUR IDENTITY. YOUR DRIPS.</p>
+  <a href="#shop" class="btn btn-light">EXPLORE NEW ARRIVALS</a>
+ </div>
+</section>
+
+<section class="editorial" id="about">
+ <div class="editorial-image">
+  <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1100&q=85" alt="Fashion editorial">
+ </div>
+ <div class="editorial-content">
+  <small>THE STORY BEHIND THE STYLE</small>
+  <h2>More Than Fashion. It's An Identity.</h2>
+  <p>
+   A...j DRIPS represents confidence, individuality and
+   modern expression. Our vision is to bring together
+   premium fashion, contemporary streetwear and timeless
+   designs for people around the world.
+  </p>
+  <a href="#contact" class="btn" style="width:max-content">CONNECT WITH US</a>
+ </div>
+</section>
+
+<section class="newsletter">
+ <h2>Stay Ahead of the Trend.</h2>
+ <p>Join our community and discover new collections and special offers.</p>
+ <form class="newsletter-form" onsubmit="subscribe(event)">
+  <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+  <button type="submit">SUBSCRIBE</button>
+ </form>
+</section>
+</main>
+
+<footer id="contact">
+ <div class="footer-grid">
+  <div class="footer-brand">
+   <h2>A...j DRIPS</h2>
+   <p>
+    Fashion without limits. Discover premium fashion,
+    unique streetwear and contemporary clothing.
+    Your style begins here.
+   </p>
+  </div>
+  <div class="footer-column">
+   <h4>EXPLORE</h4>
+   <a href="#shop">Shop All</a>
+   <a href="#collections">Men's Fashion</a>
+   <a href="#collections">Women's Fashion</a>
+   <a href="#collections">Shoes</a>
+   <a href="#new">New Arrivals</a>
+  </div>
+  <div class="footer-column">
+   <h4>INFORMATION</h4>
+   <a href="#about">About Us</a>
+   <a href="#" onclick="showMessage('Shipping information coming soon.')">Shipping Policy</a>
+   <a href="#" onclick="showMessage('Returns policy coming soon.')">Returns Policy</a>
+   <a href="#" onclick="showMessage('Privacy policy coming soon.')">Privacy Policy</a>
+  </div>
+  <div class="footer-column">
+   <h4>CONTACT US</h4>
+   <a id="whatsappLink" href="#" target="_blank">WhatsApp Support</a>
+   <a id="emailLink" href="#">Email Support</a>
+   <a href="#" onclick="openAccount()">My Account</a>
+   <a href="#" onclick="openAdmin()">Admin Dashboard</a>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <span>© <span id="year"></span> A...j DRIPS. All Rights Reserved.</span>
+  <span>FASHION WITHOUT LIMITS.</span>
+ </div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+<div class="drawer" id="cartDrawer">
+ <div class="drawer-head">
+  <h3>YOUR SHOPPING BAG</h3>
+  <button class="close-btn" onclick="closePanels()">×</button>
+ </div>
+ <div id="cartItems"></div>
+ <div class="cart-total">
+  <span>SUBTOTAL</span><span id="cartTotal">₦0</span>
+ </div>
+ <p style="font-size:11px;color:#777;margin-bottom:18px">Delivery charges calculated separately.</p>
+ <button class="full-btn" onclick="checkout()">PROCEED TO CHECKOUT</button>
+</div>
+
+<div class="drawer" id="wishlistDrawer">
+ <div class="drawer-head">
+  <h3>YOUR WISHLIST ♡</h3>
+  <button class="close-btn" onclick="closePanels()">×</button>
+ </div>
+ <div id="wishlistItems"></div>
+</div>
+
+<div class="modal" id="accountModal">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('accountModal')">×</button>
+  <h2 id="accountTitle">Welcome Back.</h2>
+  <p id="accountDescription">Sign in to your A...j DRIPS account.</p>
+  <div class="message" id="accountMessage"></div>
+  <form id="accountForm" onsubmit="accountSubmit(event)">
+   <div id="nameField" style="display:none">
+    <label>Full Name</label>
+    <input type="text" id="accountName" placeholder="Your full name">
+   </div>
+   <label>Email Address</label>
+   <input type="email" id="accountEmail" placeholder="Your email" required>
+   <label>Password</label>
+   <input type="password" id="accountPassword" placeholder="Password" required minlength="6">
+   <button class="full-btn" id="accountSubmit" type="submit">LOGIN</button>
+  </form>
+  <div class="modal-switch">
+   <span id="switchText">Don't have an account?</span>
+   <button onclick="switchAccount()">Create account</button>
+  </div>
+  <p style="margin-top:18px;text-align:center;font-size:10px">
+   Google sign-in requires a configured authentication provider.
+  </p>
+ </div>
+</div>
+
+<div class="modal" id="checkoutModal">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('checkoutModal')">×</button>
+  <h2>Checkout</h2>
+  <p>Complete your delivery information.</p>
+  <form onsubmit="placeOrder(event)">
+   <label>Full Name</label>
+   <input id="deliveryName" required placeholder="Full name">
+   <label>Email Address</label>
+   <input type="email" id="deliveryEmail" required placeholder="Email">
+   <label>Phone Number</label>
+   <input id="deliveryPhone" required placeholder="Phone number">
+   <label>Delivery Address</label>
+   <textarea id="deliveryAddress" required placeholder="Enter delivery address" style="width:100%;height:85px;padding:12px;border:1px solid #ddd;margin-bottom:13px"></textarea>
+   <label>Delivery Method</label>
+   <select id="deliveryMethod" style="width:100%;padding:13px;border:1px solid #ddd;margin-bottom:13px">
+    <option>Home Delivery</option>
+    <option>Pickup Location</option>
+   </select>
+   <label>Currency</label>
+   <select id="currency" onchange="updateCurrency()" style="width:100%;padding:13px;border:1px solid #ddd;margin-bottom:13px">
+    <option value="NGN">Nigerian Naira (₦)</option>
+    <option value="USD">US Dollars ($)</option>
+   </select>
+   <label>Payment Method</label>
+   <select id="paymentMethod" style="width:100%;padding:13px;border:1px solid #ddd;margin-bottom:18px">
+    <option>Bank Transfer</option>
+    <option>Debit/Credit Card</option>
+    <option>Paystack</option>
+    <option>Flutterwave</option>
+    <option>PayPal</option>
+   </select>
+   <p id="checkoutTotal"></p>
+   <button class="full-btn" type="submit">PLACE ORDER</button>
+  </form>
+ </div>
+</div>
+
+<div class="modal" id="productModal">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('productModal')">×</button>
+  <div id="productDetail"></div>
+ </div>
+</div>
+
+<div class="modal" id="searchModal">
+ <div class="modal-box">
+  <button class="modal-close" onclick="closeModal('searchModal')">×</button>
+  <h2>Find Your Style.</h2>
+  <input type="search" id="searchInput" placeholder="Search clothing, shoes..." oninput="searchProducts()">
+  <div id="searchResults"></div>
+ </div>
+</div>
+
+<div class="modal" id="adminModal">
+ <div class="modal-box" style="width:min(800px,100%)">
+  <button class="modal-close" onclick="closeModal('adminModal')">×</button>
+  <h2>Admin Dashboard</h2>
+  <p>Demo product management interface.</p>
+  <div class="admin-panel">
+   <h3>Add New Product</h3>
+   <input id="newProductName" placeholder="Product name">
+   <input id="newProductPrice" type="number" placeholder="Price in Naira">
+   <select id="newProductCategory">
+    <option>Men</option><option>Women</option><option>Shoes</option><option>Streetwear</option>
+   </select>
+   <input id="newProductImage" placeholder="Image URL">
+   <button class="full-btn" onclick="addProduct()">ADD PRODUCT</button>
+  </div>
+  <h3>Product Inventory</h3>
+  <div style="overflow-x:auto">
+   <table class="admin-table">
+    <thead><tr><th>Product</th><th>Price</th><th>Category</th><th>Action</th></tr></thead>
+    <tbody id="adminProducts"></tbody>
+   </table>
+  </div>
+  <p style="margin-top:20px">Note: This demo dashboard stores data in this browser only.</p>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================
+// A...J DRIPS - STORE CONFIGURATION
+// ============================================
+
+// Replace these with your real business details.
+const STORE = {
+  whatsapp: "2348000000000",
+  email: "yourbusiness@example.com"
+};
+
+// Sample exchange rate. Update before accepting USD orders.
+const USD_RATE = 1500;
+
+// ============================================
+// PRODUCT DATABASE
+// ============================================
+
+const initialProducts = [
+ {
+  id:1,name:"Essential Oversized Tee",category:"Men",
+  type:"Streetwear",price:18000,oldPrice:22000,
+  image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85",
+  description:"Premium everyday oversized cotton T-shirt.",
+  tag:"BESTSELLER",rating:5
+ },
+ {
+  id:2,name:"Urban Baggy Jeans",category:"Men",
+  type:"Streetwear",price:35000,oldPrice:42000,
+  image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85",
+  description:"Relaxed fit denim with a contemporary streetwear silhouette.",
+  tag:"TRENDING",rating:5
+ },
+ {
+  id:3,name:"Classic Women's Outfit",category:"Women",
+  type:"Fashion",price:32000,oldPrice:38000,
+  image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=85",
+  description:"A stylish contemporary outfit for everyday elegance.",
+  tag:"NEW",rating:5
+ },
+ {
+  id:4,name:"Premium White Sneakers",category:"Shoes",
+  type:"Footwear",price:42000,oldPrice:48000,
+  image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85",
+  description:"Clean and versatile footwear for modern looks.",
+  tag:"POPULAR",rating:5
+ },
+ {
+  id:5,name:"Luxury Black Hoodie",category:"Men",
+  type:"Streetwear",price:28000,oldPrice:33000,
+  image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=85",
+  description:"Comfortable premium hoodie with a relaxed fit.",
+  tag:"NEW",rating:5
+ },
+ {
+  id:6,name:"Women's Denim Jacket",category:"Women",
+  type:"Fashion",price:39000,oldPrice:45000,
+  image:"https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=800&q=85",
+  description:"Modern denim jacket for a timeless look.",
+  tag:"LIMITED",rating:5
+ },
+ {
+  id:7,name:"Premium Cargo Trousers",category:"Men",
+  type:"Streetwear",price:30000,oldPrice:35000,
+  image:"https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=800&q=85",
+  description:"Functional cargo trousers with a modern cut.",
+  tag:"TRENDING",rating:5
+ },
+ {
+  id:8,name:"Women's Fashion Dress",category:"Women",
+  type:"Fashion",price:45000,oldPrice:52000,
+  image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=800&q=85",
+  description:"Elegant contemporary dress for special occasions.",
+  tag:"NEW",rating:5
+ },
+ {
+  id:9,name:"Streetwear Sweatshirt",category:"Men",
+  type:"Streetwear",price:26000,oldPrice:30000,
+  image:"https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=800&q=85",
+  description:"Soft premium sweatshirt with a relaxed silhouette.",
+  tag:"POPULAR",rating:5
+ },
+ {
+  id:10,name:"Women's Sneakers",category:"Shoes",
+  type:"Footwear",price:38000,oldPrice:44000,
+  image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=85",
+  description:"Modern everyday sneakers with a versatile design.",
+  tag:"NEW",rating:5
+ },
+ {
+  id:11,name:"Classic Black Trousers",category:"Women",
+  type:"Fashion",price:25000,oldPrice:30000,
+  image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=85",
+  description:"Elegant trousers designed for everyday styling.",
+  tag:"CLASSIC",rating:5
+ },
+ {
+  id:12,name:"Premium Denim Jacket",category:"Men",
+  type:"Streetwear",price:40000,oldPrice:47000,
+  image:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=85",
+  description:"Contemporary denim outerwear.",
+  tag:"LIMITED",rating:5
+ }
+];
+
+let products = load("aj_products",initialProducts);
+let cart = load("aj_cart",[]);
+let wishlist = load("aj_wishlist",[]);
+let users = load("aj_users",[]);
+let currentUser = load("aj_current_user",null);
+let currentFilter = "All";
+let selectedProduct = null;
+let selectedSize = "M";
+let currencyMode = "NGN";
+
+// ============================================
+// STORAGE AND UTILITIES
+// ============================================
+
+function load(key,fallback) {
+ try {
+  const value=localStorage.getItem(key);
+  return value ? JSON.parse(value) : fallback;
+ } catch(e) {return fallback;}
+}
+
+function save(key,value) {
+ localStorage.setItem(key,JSON.stringify(value));
+}
+
+function money(amount) {
+ return currencyMode==="USD"
+  ? "$"+(amount/USD_RATE).toFixed(2)
+  : "₦"+amount.toLocaleString("en-NG");
+}
+
+function toast(message) {
+ const box=document.getElementById("toast");
+ box.textContent=message;
+ box.classList.add("show");
+ setTimeout(()=>box.classList.remove("show"),2600);
+}
+
+function showMessage(message) {
+ toast(message);
+}
+
+function closeModal(id) {
+ document.getElementById(id).classList.remove("show");
+}
+
+function toggleMenu() {
+ document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function closePanels() {
+ document.getElementById("overlay").classList.remove("show");
+ document.getElementById("cartDrawer").classList.remove("show");
+ document.getElementById("wishlistDrawer").classList.remove("show");
+}
+
+function openDrawer(id) {
+ closePanels();
+ document.getElementById("overlay").classList.add("show");
+ document.getElementById(id).classList.add("show");
+}
+
+function openCart() {
+ renderCart();
+ openDrawer("cartDrawer");
+}
+
+function openWishlist() {
+ renderWishlist();
+ openDrawer("wishlistDrawer");
+}
+
+function openSearch() {
+ document.getElementById("searchModal").classList.add("show");
+ document.getElementById("searchInput").focus();
+}
+
+// ============================================
+// PRODUCT DISPLAY AND FILTERING
+// ============================================
+
+function renderProducts() {
+ const grid=document.getElementById("productGrid");
+ let list=[...products];
+
+ if(currentFilter!=="All") {
+  list=list.filter(p=>
+   p.category===currentFilter ||
+   p.type===currentFilter
+  );
+ }
+
+ const sort=document.getElementById("sortSelect").value;
+ if(sort==="low") list.sort((a,b)=>a.price-b.price);
+ if(sort==="high") list.sort((a,b)=>b.price-a.price);
+
+ grid.innerHTML="";
+
+ if(!list.length) {
+  grid.innerHTML='<div class="empty-state">No products found in this collection.</div>';
+  return;
+ }
+
+ list.forEach(p=>{
+  const wished=wishlist.includes(p.id);
+
+  grid.innerHTML+=`
+   <article class="product-card">
+    <div class="product-image">
+     <img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" loading="lazy">
+     <span class="product-tag">${escapeHTML(p.tag||"COLLECTION")}</span>
+     <button class="wishlist-btn ${wished?'selected':''}" onclick="toggleWishlist(${p.id})">
+      ${wished?'♥':'♡'}
+     </button>
+     <button class="quick-add" onclick="showProduct(${p.id})">VIEW PRODUCT</button>
+    </div>
+    <div class="product-details">
+     <div class="product-category">${escapeHTML(p.category)}</div>
+     <div class="product-name">${escapeHTML(p.name)}</div>
+     <div class="product-price">
+      ${money(p.price)}
+      ${p.oldPrice?`<span class="old-price">${money(p.oldPrice)}</span>`:""}
+     </div>
+     <div class="rating">★★★★★</div>
+    </div>
+   </article>`;
+ });
+}
+
+function setFilter(filter,button) {
+ currentFilter=filter;
+ document.querySelectorAll(".filter-buttons button").forEach(b=>b.classList.remove("active"));
+
+ if(button) button.classList.add("active");
+ else {
+  const btn=[...document.querySelectorAll(".filter-buttons button")]
+    .find(b=>b.textContent.trim()===filter);
+  if(btn) btn.classList.add("active");
+ }
+
+ renderProducts();
+}
+
+function escapeHTML(value) {
+ return String(value).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+// ============================================
+// PRODUCT DETAILS
+// ============================================
+
+function showProduct(id) {
+ const p=products.find(x=>x.id===id);
+ if(!p) return;
+
+ selectedProduct=p;
+ selectedSize="M";
+
+ document.getElementById("productDetail").innerHTML=`
+  <img class="detail-image" src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}">
+  <small>${escapeHTML(p.category)}</small>
+  <h2 style="margin-top:10px">${escapeHTML(p.name)}</h2>
+  <h3 style="margin:12px 0">${money(p.price)}</h3>
+  <p>${escapeHTML(p.description)}</p>
+  <strong style="font-size:12px">Select Size</strong>
+  <div class="size-options">
+   ${["S","M","L","XL","XXL"].map(s=>
+    `<button class="${s==="M"?'active':''}" onclick="selectSize('${s}',this)">${s}</button>`
+   ).join("")}
+  </div>
+  <strong style="font-size:12px">Quantity</strong>
+  <input type="number" id="productQty" value="1" min="1" max="20">
+  <button class="full-btn" onclick="addToCart(${p.id},selectedSize)">ADD TO BAG</button>
+  <p style="margin-top:15px">★★★★★ Customer rating</p>
+ `;
+
+ document.getElementById("productModal").classList.add("show");
+}
+
+function selectSize(size,button) {
+ selectedSize=size;
+ document.querySelectorAll(".size-options button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+}
+
+// ============================================
+// SHOPPING CART
+// ============================================
+
+function addToCart(id,size="M",quantity=1) {
+ const p=products.find(x=>x.id===id);
+ if(!p) return;
+
+ const qty=Math.max(1,Math.min(20,Number(quantity)||1));
+ const existing=cart.find(x=>x.id===id&&x.size===size);
+
+ if(existing) existing.quantity+=qty;
+ else cart.push({id,size,quantity:qty});
+
+ save("aj_cart",cart);
+ updateCartCount();
+ renderCart();
+ closeModal("productModal");
+ toast("Added to your shopping bag.");
+}
+
+function removeCart(id,size) {
+ cart=cart.filter(x=>!(x.id===id&&x.size===size));
+ save("aj_cart",cart);
+ renderCart();
+ updateCartCount();
+}
+
+function renderCart() {
+ const box=document.getElementById("cartItems");
+
+ if(!cart.length) {
+  box.innerHTML='<div class="empty-state">Your shopping bag is empty.<br><br>Discover something you love.</div>';
+  document.getElementById("cartTotal").textContent=money(0);
+  return;
+ }
+
+ let total=0;
+ box.innerHTML="";
+
+ cart.forEach(item=>{
+  const p=products.find(x=>x.id===item.id);
+  if(!p) return;
+  total+=p.price*item.quantity;
+
+  box.innerHTML+=`
+   <div class="cart-item">
+    <img src="${escapeHTML(p.image)}" alt="">
+    <div>
+     <h4>${escapeHTML(p.name)}</h4>
+     <p>Size: ${escapeHTML(item.size)} | Quantity: ${item.quantity}</p>
+     <p>${money(p.price*item.quantity)}</p>
+     <button onclick="removeCart(${p.id},'${item.size}')">REMOVE</button>
+    </div>
+   </div>`;
+ });
+
+ document.getElementById("cartTotal").textContent=money(total);
+}
+
+function updateCartCount() {
+ const count=cart.reduce((sum,x)=>sum+x.quantity,0);
+ document.getElementById("cartCount").textContent=count;
+ save("aj_cart",cart);
+}
+
+// ============================================
+// WISHLIST
+// ============================================
+
+function toggleWishlist(id) {
+ if(wishlist.includes(id)) {
+  wishlist=wishlist.filter(x=>x!==id);
+  toast("Removed from wishlist.");
+ } else {
+  wishlist.push(id);
+  toast("Added to wishlist.");
+ }
+
+ save("aj_wishlist",wishlist);
+ renderProducts();
+ renderWishlist();
+}
+
+function renderWishlist() {
+ const box=document.getElementById("wishlistItems");
+
+ if(!wishlist.length) {
+  box.innerHTML='<div class="empty-state">Your wishlist is empty.</div>';
+  return;
+ }
+
+ box.innerHTML="";
+ wishlist.forEach(id=>{
+  const p=products.find(x=>x.id===id);
+  if(!p) return;
+
+  box.innerHTML+=`
+   <div class="cart-item">
+    <img src="${escapeHTML(p.image)}" alt="">
+    <div>
+     <h4>${escapeHTML(p.name)}</h4>
+     <p>${money(p.price)}</p>
+     <button onclick="addToCart(${p.id})">ADD TO BAG</button>
+     <button onclick="toggleWishlist(${p.id})">REMOVE</button>
+    </div>
+   </div>`;
+ });
+}
+
+// ============================================
+// SEARCH
+// ============================================
+
+function searchProducts() {
+ const q=document.getElementById("searchInput").value.toLowerCase();
+ const box=document.getElementById("searchResults");
+
+ const found=products.filter(p=>
+  p.name.toLowerCase().includes(q)||
+  p.category.toLowerCase().includes(q)||
+  p.type.toLowerCase().includes(q)
+ );
+
+ box.innerHTML=found.length ? found.map(p=>`
+  <div class="cart-item">
+   <img src="${escapeHTML(p.image)}" alt="">
+   <div>
+    <h4>${escapeHTML(p.name)}</h4>
+    <p>${money(p.price)}</p>
+    <button onclick="closeModal('searchModal');showProduct(${p.id})">VIEW PRODUCT</button>
+   </div>
+  </div>
+ `).join("") : '<p>No matching products found.</p>';
+}
+
+// ============================================
+// CHECKOUT
+// ============================================
+
+function checkout() {
+ if(!cart.length) {
+  toast("Your shopping bag is empty.");
+  return;
+ }
+
+ closePanels();
+ document.getElementById("checkoutModal").classList.add("show");
+ document.getElementById("checkoutTotal").textContent=
+  "Order total: "+money(cart.reduce((sum,x)=>{
+   const p=products.find(y=>y.id===x.id);
+   return sum+(p?p.price*x.quantity:0);
+  },0));
+}
+
+function updateCurrency() {
+ currencyMode=document.getElementById("currency").value;
+ document.getElementById("checkoutTotal").textContent=
+  "Order total: "+money(cart.reduce((sum,x)=>{
+   const p=products.find(y=>y.id===x.id);
+   return sum+(p?p.price*x.quantity:0);
+  },0));
+ renderProducts();
+ renderCart();
+ renderWishlist();
+}
+
+function placeOrder(event) {
+ event.preventDefault();
+
+ const order={
+  reference:"AJD-"+Date.now(),
+  name:document.getElementById("deliveryName").value,
+  email:document.getElementById("deliveryEmail").value,
+  phone:document.getElementById("deliveryPhone").value,
+  address:document.getElementById("deliveryAddress").value,
+  delivery:document.getElementById("deliveryMethod").value,
+  payment:document.getElementById("paymentMethod").value,
+  currency:currencyMode,
+  items:cart,
+  date:new Date().toISOString(),
+  status:"Pending"
+ };
+
+ const orders=load("aj_orders",[]);
+ orders.push(order);
+ save("aj_orders",orders);
+
+ closeModal("checkoutModal");
+
+ const message=`Hello A...j DRIPS. I want to confirm my order ${order.reference}. Total: ${money(cart.reduce((s,x)=>{
+  const p=products.find(y=>y.id===x.id);
+  return s+(p?p.price*x.quantity:0);
+ },0))}. Please provide payment and delivery instructions.`;
+
+ cart=[];
+ save("aj_cart",cart);
+ updateCartCount();
+ renderCart();
+
+ toast("Demo order created successfully.");
+
+ // This opens WhatsApp for manual order confirmation.
+ // Real order processing needs a secure backend.
+ const url="https://wa.me/"+STORE.whatsapp+"?text="+encodeURIComponent(message);
+ window.open(url,"_blank");
+}
+
+// ============================================
+// CUSTOMER ACCOUNTS - FRONTEND DEMO
+// ============================================
+
+let accountMode="login";
+
+function openAccount() {
+ accountMode="login";
+ renderAccount();
+ document.getElementById("accountModal").classList.add("show");
+}
+
+function switchAccount() {
+ accountMode=accountMode==="login"?"register":"login";
+ renderAccount();
+}
+
+function renderAccount() {
+ const register=accountMode==="register";
+
+ document.getElementById("accountTitle").textContent=
+  register?"Create Your Account":"Welcome Back.";
+
+ document.getElementById("accountDescription").textContent=
+  register?"Join the A...j DRIPS community.":"Sign in to your A...j DRIPS account.";
+
+ document.getElementById("nameField").style.display=register?"block":"none";
+ document.getElementById("accountName").required=register;
+ document.getElementById("accountSubmit").textContent=register?"REGISTER":"LOGIN";
+ document.getElementById("switchText").textContent=
+  register?"Already have an account?":"Don't have an account?";
+ document.querySelector(".modal-switch button").textContent=
+  register?"Login":"Create account";
+ document.getElementById("accountMessage").style.display="none";
+}
+
+function accountSubmit(event) {
+ event.preventDefault();
+
+ const email=document.getElementById("accountEmail").value.trim().toLowerCase();
+ const password=document.getElementById("accountPassword").value;
+ const name=document.getElementById("accountName").value.trim();
+
+ if(accountMode==="register") {
+  if(users.some(u=>u.email===email)) {
+   toast("This email already has an account.");
+   return;
+  }
+
+  users.push({name,email,password});
+  save("aj_users",users);
+  toast("Account created. Please login.");
+  accountMode="login";
+  renderAccount();
+  return;
+ }
+
+ const user=users.find(u=>u.email===email&&u.password===password);
+
+ if(!user) {
+  toast("Invalid email or password.");
+  return;
+ }
+
+ currentUser={name:user.name,email:user.email};
+ save("aj_current_user",currentUser);
+ closeModal("accountModal");
+ toast("Welcome, "+user.name+"!");
+}
+
+// ============================================
+// ADMIN DASHBOARD - FRONTEND DEMO
+// ============================================
+
+function openAdmin() {
+ renderAdmin();
+ document.getElementById("adminModal").classList.add("show");
+}
+
+function renderAdmin() {
+ const box=document.getElementById("adminProducts");
+ box.innerHTML="";
+
+ products.forEach(p=>{
+  box.innerHTML+=`
+   <tr>
+    <td>${escapeHTML(p.name)}</td>
+    <td>${money(p.price)}</td>
+    <td>${escapeHTML(p.category)}</td>
+    <td><button onclick="deleteProduct(${p.id})">Delete</button></td>
+   </tr>`;
+ });
+}
+
+function addProduct() {
+ const name=document.getElementById("newProductName").value.trim();
+ const price=Number(document.getElementById("newProductPrice").value);
+ const category=document.getElementById("newProductCategory").value;
+ const image=document.getElementById("newProductImage").value.trim();
+
+ if(!name||price<=0||!image) {
+  toast("Please complete all product details.");
+  return;
+ }
+
+ try {
+  const parsed=new URL(image);
+  if(!["https:","http:"].includes(parsed.protocol)) throw new Error();
+ } catch(e) {
+  toast("Enter a valid image URL.");
+  return;
+ }
+
+ products.push({
+  id:Date.now(),
+  name,price,category,
+  type:category==="Shoes"?"Footwear":"Streetwear",
+  image,
+  description:"A new A...j DRIPS collection product.",
+  tag:"NEW",
+  rating:5
+ });
+
+ save("aj_products",products);
+ renderProducts();
+ renderAdmin();
+
+ document.getElementById("newProductName").value="";
+ document.getElementById("newProductPrice").value="";
+ document.getElementById("newProductImage").value="";
+
+ toast("Product added.");
+}
+
+function deleteProduct(id) {
+ if(!confirm("Delete this product?")) return;
+
+ products=products.filter(p=>p.id!==id);
+ cart=cart.filter(x=>x.id!==id);
+ wishlist=wishlist.filter(x=>x!==id);
+
+ save("aj_products",products);
+ save("aj_cart",cart);
+ save("aj_wishlist",wishlist);
+
+ renderProducts();
+ renderAdmin();
+ updateCartCount();
+ toast("Product deleted.");
+}
+
+// ============================================
+// NEWSLETTER
+// ============================================
+
+function subscribe(event) {
+ event.preventDefault();
+ const email=document.getElementById("newsletterEmail").value;
+
+ const list=load("aj_newsletter",[]);
+ if(list.includes(email)) {
+  toast("You are already subscribed.");
+  return;
+ }
+
+ list.push(email);
+ save("aj_newsletter",list);
+ document.getElementById("newsletterEmail").value="";
+ toast("Thank you for subscribing!");
+}
+
+// ============================================
+// INITIALIZE WEBSITE
+// ============================================
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("whatsappLink").href=
+ "https://wa.me/"+STORE.whatsapp;
+
+document.getElementById("emailLink").href=
+ "mailto:"+STORE.email;
+
+renderProducts();
+renderCart();
+renderWishlist();
+updateCartCount();
+
+</script>
+</body>
+</html>
